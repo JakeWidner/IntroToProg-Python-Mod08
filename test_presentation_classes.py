@@ -8,12 +8,13 @@
 import unittest
 from unittest.mock import patch
 from presentation_classes import IO
+from data_classes import Employee
 
 
 class TestIO(unittest.TestCase):
     def __init__(self, methodName: str = "runTest"):
         super().__init__(methodName)
-        self.employee_type = object
+        self.employee_type = Employee()
 
     def setUp(self):
         self.employee_data = []
