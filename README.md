@@ -69,10 +69,10 @@ This module defines the core data structures used in the application.
 - **`Employee` Class**:
   - Inherits from `Person`.
   - **Attributes**:
-    - `employee_id` (int): A unique identifier for the employee.
-    - `rating` (float): The performance rating of the employee.
+    - `review_date` (str): The date of the employee's performance review.
+    - `review_rating` (int): The performance rating of the employee.
   - **Methods**:
-    - `__init__(self, employee_id, first_name, last_name, rating)`: Constructor method to initialize the `Employee` object with an ID, name, and rating.
+    - `__init__(self, first_name, last_name, review_date, review_rating)`: Constructor method to initialize the `Employee` object with an ID, name, and rating.
     - `__str__(self)`: Returns a formatted string representation of the `Employee` object.
 
 ### processing_classes.py
