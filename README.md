@@ -81,7 +81,7 @@ This module is responsible for handling data persistence and processing.
 
 - **`FileProcessor` Class**:
   - **Methods**:
-    - `read_employee_data_from_file(file_name, employee_data, employee_type)`: Reads employee data from a JSON file and returns a list of `Employee` objects.
+    - `read_employee_data_from_file(file_name, employee_data)`: Reads employee data from a JSON file and returns a list of `Employee` objects.
     - `save_employee_data_to_file(file_name, employee_data)`: Saves the list of `Employee` objects to a JSON file.
 
 ### presentation_classes.py
@@ -92,7 +92,7 @@ This module handles the user interface and interaction.
   - **Methods**:
     - `output_menu(menu)`: Displays a menu to the user.
     - `input_menu_choice()`: Collects and returns the user's menu selection.
-    - `input_employee_data(employee_data, employee_type)`: Prompts the user to enter new employee data, adds it to the existing data, and returns the updated list.
+    - `input_employee_data(employee_data)`: Prompts the user to enter new employee data, adds it to the existing data, and returns the updated list.
     - `output_employee_data(employee_data)`: Displays the list of employee data to the user.
 
 - **Constants**:
