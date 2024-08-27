@@ -96,9 +96,8 @@ This module handles the user interface and interaction.
     - `output_employee_data(employee_data)`: Displays the list of employee data to the user.
 
 - **Constants**:
-  - `WELCOME`: A string containing the welcome message displayed when the application starts.
   - `MENU`: A string containing the main menu options.
-  - `EXIT_MSG`: A string containing the message displayed when the application exits.
+  - `FILE_NAME`: A string containing the name of the JSON file that the data is saved to.
 
 ## Testing
 
