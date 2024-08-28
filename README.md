@@ -15,8 +15,6 @@ Note: ChatGPT was used to generate this ReadMe. Edits were made.
   - [processing_classes.py](#processing_classespy)
   - [presentation_classes.py](#presentation_classespy)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
