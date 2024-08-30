@@ -11,7 +11,7 @@ try:
         raise Exception("Please use the main.py file to start this application.")
     else:
         import json
-        import data_classes as data
+        from data_classes import Employee
         import presentation_classes as pres
 except Exception as e:
     print(e.__str__())
@@ -26,7 +26,7 @@ class FileProcessor:
     """
 
     @staticmethod
-    def read_employee_data_from_file(file_name: str, employee_data: list):
+    def read_employee_data_from_file(file_name: str, employee_data: list, employee_type: object):
         """ This function reads data from a json file and loads it into a list of dictionary rows
 
         ChangeLog: (Who, When, What)
@@ -35,16 +35,18 @@ class FileProcessor:
         :rtype: object
         :param file_name: string data with name of file to read from
         :param employee_data: list of dictionary rows to be filled with file data
+        :param employee_type: type of employee to read data from
         :return: list
         """
         try:
             with open(file_name, "r") as file:
                 list_of_dictionary_data = json.load(file)  # the load function returns a list of dictionary rows.
                 for employee in list_of_dictionary_data:
-                    employee_object = data.Employee(first_name=employee["FirstName"],
-                                                    last_name=employee["LastName"],
-                                                    review_date=employee["ReviewDate"],
-                                                    review_rating=employee["ReviewRating"])
+                    employee_object = employee_type()
+                    employee_object.first_name = employee["FirstName"]
+                    employee_object.last_name = employee["LastName"]
+                    employee_object.review_date = employee["ReviewDate"]
+                    employee_object.review_rating = employee["ReviewRating"]
                     employee_data.append(employee_object)
         except FileNotFoundError:
             raise FileNotFoundError("Text file must exist before running this script!")

@@ -8,6 +8,7 @@
 import unittest
 from unittest.mock import patch
 from presentation_classes import IO
+from data_classes import Employee
 
 
 class TestIO(unittest.TestCase):
@@ -24,7 +25,7 @@ class TestIO(unittest.TestCase):
     def test_input_employee_data(self):
         # Simulate user input for employee data
         with patch('builtins.input', side_effect=['John', 'Doe', "2024-08-24", 4]):
-            IO.input_employee_data(self.employee_data)
+            IO.input_employee_data(self.employee_data, Employee)
             self.assertEqual(len(self.employee_data), 1)
             self.assertEqual(self.employee_data[0].first_name, 'John')
             self.assertEqual(self.employee_data[0].last_name, 'Doe')
@@ -33,7 +34,7 @@ class TestIO(unittest.TestCase):
 
         # Simulate invalid Employee Rating not an integer
         with patch('builtins.input', side_effect=['Alice', 'Smith', 'invalid']):
-            IO.input_employee_data(self.employee_data)
+            IO.input_employee_data(self.employee_data, Employee)
             self.assertEqual(len(self.employee_data), 1)  # Data should not be added due to invalid input
 
 

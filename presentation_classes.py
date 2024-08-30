@@ -9,7 +9,7 @@ try:
     if __name__ == "__main__":
         raise Exception("Please use the main.py file to start this application.")
     else:
-        import data_classes as data
+        from data_classes import Employee
 except Exception as e:
     print(e.__str__())
 
@@ -104,7 +104,7 @@ class IO:
         print()
 
     @staticmethod
-    def input_employee_data(employee_data: list):
+    def input_employee_data(employee_data: list, employee_type: object):
         """ This function gets the first name, last name, and GPA from the user
 
         ChangeLog: (Who, When, What)
@@ -112,16 +112,18 @@ class IO:
 
         :rtype: object
         :param employee_data: list of dictionary rows to be filled with input data
+        :param employee_type: Employee type object
 
         :return: list
         """
 
         try:
             # Input the data
-            employee_object = data.Employee(first_name=input("What is the employee's first name? "),
-                                            last_name=input("What is the employee's last name? "),
-                                            review_date=input("What is their review date? (Format: YYYY-MM-DD) "),
-                                            review_rating=int(input("What is their review rating? ")))
+            employee_object = employee_type()
+            employee_object.first_name = input("What is the employee's first name? ")
+            employee_object.last_name = input("What is the employee's last name? ")
+            employee_object.review_date = input("What is their review date? ")
+            employee_object.review_rating = int(input("What is their review rating? "))
             employee_data.append(employee_object)
 
         except ValueError as e:

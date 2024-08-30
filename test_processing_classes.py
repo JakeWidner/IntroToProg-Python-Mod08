@@ -8,7 +8,7 @@
 import unittest
 import tempfile
 import json
-# from data_classes import Employee
+from data_classes import Employee
 from processing_classes import FileProcessor
 
 
@@ -34,7 +34,7 @@ class TestFileProcessor(unittest.TestCase):
             json.dump(sample_data, file)
 
         # Call the read_data_from_file method and check if it returns the expected data
-        employees: list = FileProcessor.read_employee_data_from_file(self.temp_file_name, self.employee_data)
+        employees: list = FileProcessor.read_employee_data_from_file(self.temp_file_name, self.employee_data, Employee)
 
         # Assert that the employee_data list contains the expected employee objects
         self.assertEqual(len(employees), len(sample_data))
